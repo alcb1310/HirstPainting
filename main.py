@@ -1,4 +1,3 @@
-import turtle
 from random import choice
 from data import color_list
 import turtle as t

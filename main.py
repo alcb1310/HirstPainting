@@ -1,44 +1,25 @@
-import colorgram
+import turtle
+from random import choice
+from data import color_list
+import turtle as t
 
-colors = colorgram.extract('image.jpg', 30)
-rgb_colors = []
+t.colormode(255)
+timmy = t.Turtle()
+timmy.speed(0)
 
-for color in colors:
-    rgb = color.rgb
-    r = rgb.r
-    g = rgb.g
-    b = rgb.b
-    rgb_colors.append((r, g, b))
+for _ in range(10):
+    for _ in range(10):
+        dot_color = choice(color_list)
+        timmy.penup()
+        timmy.dot(20, dot_color)
+        timmy.fd(30)
 
-print(rgb_colors)
-selected_rgb =[
-    (239, 244, 249),
-    (245, 250, 247),
-    (249, 243, 247),
-    (137, 164, 185),
-    (20, 116, 182),
-    (203, 139, 166),
-    (217, 156, 100),
-    (237, 213, 75),
-    (126, 74, 94),
-    (195, 174, 13),
-    (143, 19, 37),
-    (21, 141, 57),
-    (68, 21, 28),
-    (191, 66, 36),
-    (225, 170, 197),
-    (117, 187, 143),
-    (235, 81, 38),
-    (45, 173, 92),
-    (51, 27, 24),
-    (23, 172, 188),
-    (245, 212, 3),
-    (2, 111, 56),
-    (181, 93, 111),
-    (187, 184, 210),
-    (32, 31, 38),
-    (231, 172, 160),
-    (161, 208, 179),
-    (158, 208, 216),
-    (136, 23, 22)
-]
+    timmy.lt(90)
+    timmy.fd(30)
+    timmy.lt(90)
+    timmy.fd(300)
+    timmy.rt(180)
+
+
+screen = t.Screen()
+screen.exitonclick()
